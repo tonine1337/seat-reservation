@@ -1,0 +1,13 @@
+<div class="reserve-seat">
+  <input type="number" min="0" max="7" #seatNo/>
+  <button (click)="getSeatNo(seatNo)">
+    Submit
+  </button>
+</div>
+
+
+<div class="main-container">
+  <div *ngFor="let seat of numOfSeats;let i=index" id="{{i}}" class="seat">
+    <span ></span>
+  </div>
+</div>

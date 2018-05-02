@@ -1,0 +1,31 @@
+.main-container {
+  width: 500px;
+  border: 5px solid black;
+}
+
+.seat {
+  height: 30px;
+  width: 30px;
+  border: 2px solid black;
+  display: inline-block;
+  margin: 0 18px;
+}
+
+.reserve-seat {
+  margin: 40px;
+}
+.reserve-seat input{
+  height: 30px;
+  width: 150px;
+}
+
+.reserve-seat button {
+  background: greenyellow;
+  height: 30px;
+  width: 60px;
+  border: none;
+}
+
+.seat-selected {
+  background: forestgreen;
+}
