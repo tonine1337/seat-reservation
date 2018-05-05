@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,30 +8,33 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 export class AppComponent implements OnInit {
   public numOfSeats = [];
 
-  constructor(public renderer: Renderer2) {
+  constructor() {
   }
+  public j = 0;
 
   public getSeatNo(seatNo) {
     const seatNum = seatNo.value;
-
     let selectedSeat;
 
-    for (let i = 0; i < seatNum; i++) {
+    const k = parseInt(seatNum, 10) + this.j;
 
-      selectedSeat = document.getElementById(i.toString());
-      console.log(selectedSeat);
-      selectedSeat.className += ' seat-selected';
+    for (let i = this.j; i < k; i++) {
+      if (i <= 80) {
+        selectedSeat = document.getElementById(i.toString());
+        selectedSeat.className += ' seat-selected';
+      } else {
+        alert('No seats left');
+      }
     }
-    console.log(seatNum);
-
+    this.setLastSeat(k);
   }
-
-
-
-
-
-
-
+  /**
+   *
+   * @param seatNum
+   */
+  public setLastSeat(seatNum) {
+    this.j = parseInt(seatNum, 10);
+  }
 
   ngOnInit() {
     this.numOfSeats.length = 80;
